@@ -122,3 +122,65 @@ private User searchUser(String name, Integer age) { /* 省略 */ }
 ここでは、C#やJavaでの、細かい書き方の説明や、型の紹介は行わない。
 ここで伝えたいのは、関数もオブジェクトと同じように扱えるという感覚である。
 書き方や型の種類について知りたくなった場合は、「デリゲート」(C#)や「関数型インターフェイス」(Java)という語で調べてみるとよい。
+
+## 練習問題
+
+### 問題1
+
+### 問題2
+
+下記のように、2つの整数の演算を行う `Calculator` クラスを作成せよ。
+`Calculator` インスタンスへは、次のことができる。
+
+* 2つの整数の演算方法を登録できる。
+* 登録した演算方法を指定して、演算を実行することができる。演算方法の指定は列挙型(Enum)で行う。
+
+なお、このように演算方法を外部から登録するようにすることで、この `Calculator` での演算方法を自由にカスタマイズすることができるようになる。
+将来、さらなる演算をする必要が出てきた場合は、`Calculator` 内部の修正をすることなく、演算方法を拡張することができるという利点がある。
+
+
+`Calculator` クラスの使用例 (C#)
+
+```csharp
+public void Execute()
+{
+    Calculator calculator = new Calculator();
+    // 演算方法を登録
+    calculator.AddOperator(Operator.Add, add);
+    calculator.AddOperator(Operator.Sub, subtract);
+    calculator.AddOperator(Operator.Mul, multiply);
+    calculator.AddOperator(Operator.Div, divide);
+
+    // 演算方法を指定して演算
+    Console.WriteLine(calculator.Calculate(Operator.Add, 12, 30)); // 出力 : 42
+    Console.WriteLine(calculator.Calculate(Operator.Div, 252, 6)); // 出力 : 42
+}
+
+private int add(int a, int b) { return a + b; }
+private int subtract(int a, int b) { return a - b; }
+private int multiply(int a, int b) { return a * b; }
+private int divide(int a, int b) { return a / b; }
+
+```
+
+`Calculator` クラスの使用例 (Java)
+
+```java
+public void execute() {
+    Calculator calculator = new Calculator();
+    // 演算方法を登録
+    calculator.addOperator(Operator.Add, this::add);
+    calculator.addOperator(Operator.Sub, this::subtract);
+    calculator.addOperator(Operator.Mul, this::multiply);
+    calculator.addOperator(Operator.Div, this::divide);
+
+    // 演算方法を指定して演算
+    System.out.println(calculator.calculate(Operator.Add, 12, 30)); // 出力 : 42
+    System.out.println(calculator.calculate(Operator.Div, 252, 6)); // 出力 : 42
+}
+
+private Integer add(Integer a, Integer b) { return a + b; }
+private Integer subtract(Integer a, Integer b) { return a - b; }
+private Integer multiply(Integer a, Integer b) { return a * b; }
+private Integer divide(Integer a, Integer b) { return a / b; }
+```
