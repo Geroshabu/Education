@@ -93,7 +93,7 @@ public void Execute()
 private User searchUser(string name, int age) { /* 省略 */ }
 ```
 
-java
+Java
 ```Java
 public void execute() {
     BiFunction<String, Integer, User> method = this::searchUser;
