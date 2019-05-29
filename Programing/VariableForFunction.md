@@ -127,6 +127,34 @@ private User searchUser(String name, Integer age) { /* 省略 */ }
 
 ### 問題1
 
+下記のように、渡された関数を実行してその実行時間を表示する、`ExecutionUtils.ExecuteWithTimeMeasuring` メソッドを作成せよ。
+この `ExecuteWithTimeMeasuring` メソッドは static メソッドでよい。
+
+C#
+
+```csharp
+public void Execute()
+{
+    ExecutionUtils.ExecuteWithTimeMeasuring(sendFile); // 出力例 : "processing time is 164ms"
+    ExecutionUtils.ExecuteWithTimeMeasuring(sendBigSizeFile); // 出力例 : "processing time is 1373ms"
+}
+
+private void sendFile() { /* 重い処理 */ }
+private void sendBigSizeFile() { /* めっちゃ重い処理 */ }
+```
+
+Java
+
+```java
+public void execute() {
+    ExecutionUtils.ExecuteWithTimeMeasuring(this::sendFile); // 出力例 : "processing time is 209ms"
+    ExecutionUtils.ExecuteWithTimeMeasuring(this::sendBigSizeFile); // 出力例 : "processing time is 1910ms"
+}
+
+private void sendFile() { /* 重い処理 */ }
+private void sendBigSizeFile() { /* めっちゃ重い処理 */ }
+```
+
 ### 問題2
 
 下記のように、2つの整数の演算を行う `Calculator` クラスを作成せよ。
