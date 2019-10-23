@@ -25,9 +25,9 @@
 
 #### プログラミング
 
-* [関数を表す型](./Programing/VariableForFunction.md)
-* [ラムダ式](./Programing/Lambda.md)
-* [コレクション操作](./Programing/CollectionControl.md)
+* [関数を表す型](./Programing/HigherOrderFunction/HigherOrderFunction.md)
+* [ラムダ式](./Programing/Lambda/Lambda.md)
+* [コレクション操作](./Programing/CollectionControl/CollectionControl.md)
 
 ### 1年ぐらい経った人向け
 
