@@ -2,12 +2,12 @@
 
 ## 前提知識
 
-[メソッドを表す型](./VariableForFunction.md)の知識が必要。
+[メソッドを表す型](../HigherOrderFunction/HigherOrderFunction.md)の知識が必要。
 先にそちらの内容を理解しておくこと。
 
 ## ラムダ式を使わない例
 
-これは、[以前](./VariableForFunction.md)練習問題として考えた、計算器クラスの例である。
+これは、[以前](../HigherOrderFunction/HigherOrderFunction.md)練習問題として考えた、計算器クラスの例である。
 この計算器は、計算方法を外部から受け取れるようにすることで、様々な計算方法の拡張を可能としている。
 
 C#
