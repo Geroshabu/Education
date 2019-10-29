@@ -145,3 +145,36 @@ List<string> names = users.stream().map(user -> user.getName()); // できない
 
 すでに気付いているとは思うが、これまでの例のうち、結果がコレクションとなるものは、`ToList()` や `.collect(Collectors.toList())` といった関数を呼び出している。
 これにより、結果をリストとして得られるのだ。
+
+## 練習問題
+
+### 問題1
+
+ユーザー情報が次のクラスで定義される。
+
+C#
+
+```csharp
+class User
+{
+    public string Name { get; }
+    public int Age { get; }
+}
+```
+
+Java
+
+```Java
+class User {
+    String name;
+    public String getName() { return name; }
+    int age;
+    public int getAge() { return age; }
+}
+```
+
+このユーザー情報のリストが与えられたとき、「年長順に上位3位の年齢の合計」を得るメソッドを作成せよ。
+
+### 問題2
+
+問題1のユーザーのリストが与えられたとき、「20歳以上で、若い順にユーザーの名前が格納されたリスト」を得るメソッドを作成せよ。
